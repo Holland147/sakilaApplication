@@ -11,4 +11,9 @@ public class ActorTest {
         Assertions.assertEquals("firstName", testActor.getActorFirstName(), "The actor firstName is not correct");
 
     }
+
+    @Test
+    public void testGetMyLastName(){
+        Assertions.assertEquals("lastName", testActor.getActorLastName(), "The actor lastName is not correct");
+    }
 }
