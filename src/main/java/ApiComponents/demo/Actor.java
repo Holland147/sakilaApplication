@@ -50,7 +50,7 @@ public class Actor {
     }
 
     public void getID(int myID){
-
+        actorID = myID;
     }
 
 }
