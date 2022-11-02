@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @SpringBootApplication
@@ -21,9 +22,6 @@ public class SakilaProjectApplication {
 	private FilmRepo filmRepo;
 
 	private ActorRepo actorRepo;
-
-
-
 	private  FilmActorRepo filmActorRepo;
 
 
@@ -52,8 +50,10 @@ public class SakilaProjectApplication {
 		return filmRepo.findAll();
 	}
 
-
-
+	@GetMapping("/filmsByActor")
+	public List<Film> getFilmsByActor(){
+		return filmRepo.getFilmByID();
+	}
 
 
 

@@ -17,11 +17,15 @@ public class Film {
     @Column(name = "description")
     String myDescription;
 
+    @Column(name = "rental_duration")
+    int myRentalDescription;
+
     //constructor
 
-    public Film(String setTitle, String setDescription){
+    public Film(String setTitle, String setDescription, int setRentalDuration){
         this.myTitle = setTitle;
         this.myDescription = setDescription;
+        this.myRentalDescription = setRentalDuration;
     }
 
     public Film(){
@@ -40,6 +44,8 @@ public class Film {
     public String getMyDescription(){
         return myDescription;
     }
+
+    public int getMyRentalDescription(){return myRentalDescription;}
 
 
 
