@@ -23,6 +23,10 @@ public class SakilaProjectApplication {
 	private ActorRepo actorRepo;
 
 
+
+	private  FilmActorRepo filmActorRepo;
+
+
 	public SakilaProjectApplication(ActorRepo myActorRepo, FilmRepo myFilmRepo){
 		this.actorRepo = myActorRepo;
 		this.filmRepo = myFilmRepo;
@@ -47,6 +51,8 @@ public class SakilaProjectApplication {
 	Iterable<Film> getAllFilms(){
 		return filmRepo.findAll();
 	}
+
+
 
 
 
@@ -81,6 +87,11 @@ public class SakilaProjectApplication {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
+	}
+
+	@GetMapping("/singleActor/{id}")
+	public Actor getSingleActor(@PathVariable(value = "id") int actorID){
+		return actorRepo.findById(actorID).orElseThrow(() -> new ResourceAccessException("Actor not found" + actorID));
 	}
 
 

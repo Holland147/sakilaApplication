@@ -10,6 +10,7 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int filmID;
 
+
     @Column(name = "title")
     String myTitle;
 

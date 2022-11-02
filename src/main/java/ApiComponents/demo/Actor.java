@@ -18,9 +18,10 @@ public class Actor {
     String actorLastName;
 
     //Constructor
-    public Actor(String myFirstName, String myLastName){
+    public Actor(int myID,String myFirstName, String myLastName){
         this.actorFirstName = myFirstName;
         this.actorLastName = myLastName;
+        this.actorID = myID;
 
     }
 
@@ -49,7 +50,7 @@ public class Actor {
         return actorID;
     }
 
-    public void getID(int myID){
+    public void setActorID(int myID){
         actorID = myID;
     }
 
