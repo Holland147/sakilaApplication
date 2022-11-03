@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +56,21 @@ public class SakilaProjectApplication {
 		return filmRepo.getFilmByID();
 	}
 
+	@GetMapping("/alabama")
+	public Film getAlabama(){
+		return filmRepo.getAlabama();
+	}
+
+	@GetMapping("/singleActor/{id}")
+	public Actor getSingleActor(@PathVariable(value = "id") int actorID){
+		return actorRepo.findById(actorID).orElseThrow(() -> new ResourceAccessException("Actor not found" + actorID));
+	}
+
+	@GetMapping("/setByFilmID/{film_id}")
+	public  Film getByFilmID(@PathVariable(value = "film_id") int film_id){
+		return filmRepo.getFirstFilm(film_id);
+	}
+
 
 
 	@PutMapping("/allActors/{id}")
@@ -89,10 +105,7 @@ public class SakilaProjectApplication {
 		return response;
 	}
 
-	@GetMapping("/singleActor/{id}")
-	public Actor getSingleActor(@PathVariable(value = "id") int actorID){
-		return actorRepo.findById(actorID).orElseThrow(() -> new ResourceAccessException("Actor not found" + actorID));
-	}
+
 
 
 

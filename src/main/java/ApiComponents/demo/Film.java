@@ -22,7 +22,8 @@ public class Film {
 
     //constructor
 
-    public Film(String setTitle, String setDescription, int setRentalDuration){
+    public Film(int setFilmID, String setTitle, String setDescription, int setRentalDuration){
+        this.filmID = setFilmID;
         this.myTitle = setTitle;
         this.myDescription = setDescription;
         this.myRentalDescription = setRentalDuration;
@@ -37,15 +38,33 @@ public class Film {
         return filmID;
     }
 
+
+
+    public void setFilmID(int setFilmID) {
+        filmID = setFilmID;
+    }
+
     public String getMyTitle(){
         return myTitle;
+    }
+
+    public void setMyTitle(String setTitle){
+        myTitle = setTitle;
     }
 
     public String getMyDescription(){
         return myDescription;
     }
 
+    public void setMyDescription(String setDescription){
+        myDescription = setDescription;
+    }
+
     public int getMyRentalDescription(){return myRentalDescription;}
+
+    public void setMyRentalDescription(int setRentalDuration){
+        myRentalDescription = setRentalDuration;
+    }
 
 
 

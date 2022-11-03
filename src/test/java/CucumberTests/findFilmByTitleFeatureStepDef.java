@@ -1,12 +1,10 @@
-import ApiComponents.demo.ActorRepo;
+package CucumberTests;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class similarActorFeatureStepDef {
-
-    private ActorRepo actorRepo;
-
+public class findFilmByTitleFeatureStepDef {
     @Given("a user selects an actor")
     public void a_user_selects_an_actor() {
         // Write code here that turns the phrase above into concrete actions
