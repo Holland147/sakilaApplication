@@ -1,23 +1,48 @@
 package CucumberTests;
 
+import ApiComponents.demo.ActorRepo;
+import ApiComponents.demo.Film;
+import ApiComponents.demo.FilmRepo;
+import ApiComponents.demo.SakilaProjectApplication;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class findFilmByTitleFeatureStepDef {
-    @Given("a user selects an actor")
-    public void a_user_selects_an_actor() {
-        // Write code here that turns the phrase above into concrete actions
 
+    @Autowired
+    private FilmRepo filmRepo;
+
+    @Autowired
+    private ActorRepo actorRepo;
+
+    @Autowired
+    SakilaProjectApplication testSakalia = new SakilaProjectApplication(actorRepo, filmRepo);
+
+    String Title;
+
+    Film output;
+
+
+    @Before
+    public void init(){
+        Title = "";
+        output = new Film();
     }
-    @When("a user choses to compare and actor")
-    public void a_user_choses_to_compare_and_actor() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Given("a user wants to select a certain film by searching for the title")
+    public void a_user_wants_to_select_a_certain_film_by_searching_for_the_title() {
+        Title = "BULL SHAWSHANK";
     }
-    @Then("the program returns the sdetails")
-    public void the_program_returns_the_sdetails() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("a user inputs a title")
+    public void a_user_inputs_a_title() {
+        output = testSakalia.getFilmByTitle(Title);
+    }
+    @Then("the program selects the title that the user has implemented")
+    public void the_program_selects_the_title_that_the_user_has_implemented() {
+        Assertions.assertEquals("BULL SHAWSHANK", output.getMyTitle(), "Error");
     }
 }

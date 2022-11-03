@@ -17,6 +17,8 @@ public class Actor {
     @Column(name = "last_name")
     String actorLastName;
 
+
+
     //Constructor
     public Actor(int myID,String myFirstName, String myLastName){
         this.actorFirstName = myFirstName;

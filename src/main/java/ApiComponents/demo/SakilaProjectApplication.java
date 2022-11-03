@@ -71,6 +71,11 @@ public class SakilaProjectApplication {
 		return filmRepo.getFirstFilm(film_id);
 	}
 
+		@GetMapping("/selectFilmByTitle/{Title}")
+	public Film getFilmByTitle(@PathVariable(value = "Title") String Title){
+		return filmRepo.getFilmByTitle(Title);
+	}
+
 
 
 	@PutMapping("/allActors/{id}")
