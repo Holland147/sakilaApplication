@@ -18,4 +18,7 @@ public interface FilmRepo extends JpaRepository<Film, Integer> {
 
     @Query(nativeQuery = true, value = "select * from film Where Title = ?1")
     Film getFilmByTitle(String Title);
+
+    @Query(nativeQuery = true, value = "SELECT * FROM film ORDER BY RAND() LIMIT 1;")
+    Film getRandomFilm();
 }
