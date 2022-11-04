@@ -1,6 +1,9 @@
 package ApiComponents.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name="actor")
@@ -17,13 +20,19 @@ public class Actor {
     @Column(name = "last_name")
     String actorLastName;
 
-
+    @ManyToMany
+    @JoinTable(name = "film_actor",
+            joinColumns = @JoinColumn(name = "actor_id"),
+            inverseJoinColumns = @JoinColumn(name = "film_id"))
+    @JsonIgnore
+    Collection<Film> films;
 
     //Constructor
-    public Actor(int myID,String myFirstName, String myLastName){
+    public Actor(int myID,String myFirstName, String myLastName, Collection<Film> films){
         this.actorFirstName = myFirstName;
         this.actorLastName = myLastName;
         this.actorID = myID;
+        this.films = films;
 
     }
 
@@ -55,5 +64,10 @@ public class Actor {
     public void setActorID(int myID){
         actorID = myID;
     }
+
+    public Collection<Film> getFilms() { return films; }
+
+
+
 
 }

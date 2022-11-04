@@ -3,8 +3,12 @@ package ApiComponents.demo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class ActorTest {
-    Actor testActor = new Actor(1,"firstName", "lastName");
+    Collection<Film> films = new ArrayList<>();
+    Actor testActor = new Actor(1,"firstName", "lastName",films);
 
     @Test
     public void testGetMyID(){
