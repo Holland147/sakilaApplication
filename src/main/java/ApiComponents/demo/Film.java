@@ -23,7 +23,8 @@ public class Film {
     @Column(name = "rental_duration")
     int myRentalDescription;
 
-
+    @Column(name = "rating")
+    String myRating;
 
 
     @ManyToMany
@@ -35,12 +36,13 @@ public class Film {
 
     //constructor
 
-    public Film(int setFilmID, String setTitle, String setDescription, int setRentalDuration, Collection<Actor> actors){
+    public Film(int setFilmID, String setTitle, String setDescription, int setRentalDuration, String setRating, Collection<Actor> actors){
         this.filmID = setFilmID;
         this.myTitle = setTitle;
         this.myDescription = setDescription;
         this.myRentalDescription = setRentalDuration;
         this.actors = actors;
+        this.myRating = setRating;
     }
 
     public Film(){
@@ -82,6 +84,14 @@ public class Film {
 
     public Collection<Actor> getActors() { return actors; }
     public void setActor(Collection<Actor> actors) { this.actors = actors; }
+
+    public String getMyRating(){
+        return myRating;
+    }
+
+    public void setMyRating(String setRating) {
+        myRating = setRating;
+    }
 
 
 

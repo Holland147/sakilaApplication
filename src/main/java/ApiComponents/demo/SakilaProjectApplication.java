@@ -73,9 +73,9 @@ public class SakilaProjectApplication {
 		return filmRepo.getFilmByTitle(Title);
 	}
 
-	@GetMapping("/randomFilm")
-	public List<Film> getRandomFilmGet(){
-		return filmRepo.getRandomFilm();
+	@GetMapping("/randomFilm/{num}")
+	public List<Film> getRandomFilmGet(@PathVariable(value = "num") int num){
+		return filmRepo.getRandomFilm(num);
 	}
 
 
