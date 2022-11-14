@@ -114,8 +114,8 @@ public class SakilaProjectApplication {
 
 	@GetMapping("/filmActorLastName/{myName}")
 	public @ResponseBody
-	List<Film> getFilmByActorLastName(@PathVariable(value = "myName") String name){
-		return filmRepo.findByActorLastName(name);
+	List<Film> getFilmByActorFirstName(@PathVariable(value = "myName") String name){
+		return filmRepo.findByActorFirstName(name);
 	}
 
 

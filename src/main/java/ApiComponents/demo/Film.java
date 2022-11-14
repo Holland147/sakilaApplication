@@ -24,6 +24,8 @@ public class Film {
     int myRentalDescription;
 
 
+
+
     @ManyToMany
     @JoinTable(name = "film_actor",
             joinColumns = @JoinColumn(name = "film_id"),
