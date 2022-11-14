@@ -8,17 +8,17 @@ public class FilmActor {
     @Id
     @Column(name = "actor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int catActorID;
+    int filmActorID;
 
 
     @Column(name = "film_id")
-    int categoryFilmID;
+    int actorFilmID;
 
 
 
     public FilmActor(int setCatActorID, int setCatFilmID){
-        this.catActorID = setCatActorID;
-        this.categoryFilmID = setCatFilmID;
+        this.filmActorID = setCatActorID;
+        this.actorFilmID = setCatFilmID;
     }
 
     public FilmActor(){
@@ -26,11 +26,11 @@ public class FilmActor {
     }
 
     public int getCatActorID(){
-        return catActorID;
+        return filmActorID;
     }
 
     public int getCatFilmID(){
-        return categoryFilmID;
+        return actorFilmID;
     }
 
 }

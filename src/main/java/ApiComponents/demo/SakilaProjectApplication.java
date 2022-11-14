@@ -9,10 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @SpringBootApplication
 @RestController
@@ -77,7 +74,7 @@ public class SakilaProjectApplication {
 	}
 
 	@GetMapping("/randomFilm")
-	public Film getRandomFilmGet(){
+	public List<Film> getRandomFilmGet(){
 		return filmRepo.getRandomFilm();
 	}
 
