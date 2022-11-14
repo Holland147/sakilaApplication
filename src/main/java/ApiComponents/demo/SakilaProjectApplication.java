@@ -20,7 +20,7 @@ public class SakilaProjectApplication {
 	private FilmRepo filmRepo;
 
 	private ActorRepo actorRepo;
-	private  FilmActorRepo filmActorRepo;
+
 
 
 	public SakilaProjectApplication(ActorRepo myActorRepo, FilmRepo myFilmRepo){
@@ -110,6 +110,12 @@ public class SakilaProjectApplication {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
+	}
+
+	@GetMapping("/filmActorLastName/{myName}")
+	public @ResponseBody
+	List<Film> getFilmByActorLastName(@PathVariable(value = "myName") String name){
+		return filmRepo.findByActorLastName(name);
 	}
 
 
