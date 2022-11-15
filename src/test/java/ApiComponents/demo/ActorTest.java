@@ -5,29 +5,28 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-public class ActorTest {
+ class ActorTest {
     Collection<Film> films = new ArrayList<>();
     Actor testActor = new Actor(1,"firstName", "lastName",films);
 
     @Test
-    public void testGetMyID(){
+     void testGetMyID(){
         Assertions.assertEquals(1, testActor.getActorID(), "The ID is not correct");
     }
 
     @Test
-    public void testGetMyFirstName(){
+     void testGetMyFirstName(){
         Assertions.assertEquals("firstName", testActor.getActorFirstName(), "The actor firstName is not correct");
 
     }
 
     @Test
-    public void testGetMyLastName(){
+     void testGetMyLastName(){
         Assertions.assertEquals("lastName", testActor.getActorLastName(), "The actor lastName is not correct");
     }
 
     @Test
-    public void testSetMyFirstName(){
+     void testSetMyFirstName(){
         Assertions.assertEquals("firstName", testActor.getActorFirstName(), "actor firstName Wrong");
         testActor.setActorFirstName("bob");
         Assertions.assertEquals("bob", testActor.getActorFirstName(), "actor firstName Wrong");
@@ -35,7 +34,7 @@ public class ActorTest {
     }
 
     @Test
-    public void testSetMyLastName(){
+     void testSetMyLastName(){
         Assertions.assertEquals("lastName", testActor.getActorLastName(), "actor LastName Wrong");
         testActor.setActorLastName("bob");
         Assertions.assertEquals("bob", testActor.getActorLastName(), "actor LastName Wrong");
@@ -43,7 +42,7 @@ public class ActorTest {
     }
 
     @Test
-    public void testSetMyID(){
+     void testSetMyID(){
         Assertions.assertEquals(1, testActor.getActorID(), "actor firstName Wrong");
         testActor.setActorID(2);
         Assertions.assertEquals(2, testActor.getActorID(), "actor firstName Wrong");
