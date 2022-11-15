@@ -11,10 +11,11 @@ import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class findFilmByFirstNameStepDef {
-    List<Film> firstNameList;
+    ArrayList<Film> firstNameList;
     @Autowired
     private FilmRepo filmRepo;
 
