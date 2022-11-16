@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
+
 import java.util.*;
 
 @SpringBootApplication
@@ -71,6 +72,11 @@ public class SakilaProjectApplication {
 	@GetMapping("/selectFilmByTitle/{Title}")
 	public Film getFilmByTitle(@PathVariable(value = "Title") String Title){
 		return filmRepo.getFilmByTitle(Title);
+	}
+
+	@GetMapping("/selectFilmByTitleList/{Title}")
+	public List <Film> getFilmListTitle(@PathVariable(value = "Title") String Title){
+		return filmRepo.getFilmListTitle(Title);
 	}
 
 	@GetMapping("/randomFilm/{num}")
