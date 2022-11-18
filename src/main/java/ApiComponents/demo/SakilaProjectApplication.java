@@ -86,25 +86,25 @@ public class SakilaProjectApplication {
 
 
 
-	@PutMapping("/allActors/{id}")
-	public ResponseEntity<Actor> updateActor(@PathVariable(value = "id") int ID, @RequestBody Actor actorDetails){
-		Actor updateActor = actorRepo.findById(ID).orElseThrow(()->new ResourceAccessException("actor not found" + ID));
-
-
-		updateActor.setActorFirstName(actorDetails.getActorFirstName());
-
-		updateActor.setActorLastName(actorDetails.getActorLastName());
-
-
-		final Actor updatedActor =  actorRepo.save(updateActor);
-
-		return ResponseEntity.ok(updatedActor);
-	}
-
-	@PostMapping("/addActors")
-	public Actor createEmployee (@Validated @RequestBody Actor actor) {
-		return actorRepo.save(actor);
-	}
+//	@PutMapping("/allActors/{id}")
+//	public ResponseEntity<Actor> updateActor(@PathVariable(value = "id") int ID, @RequestBody Actor actorDetails){
+//		Actor updateActor = actorRepo.findById(ID).orElseThrow(()->new ResourceAccessException("actor not found" + ID));
+//
+//
+//		updateActor.setActorFirstName(actorDetails.getActorFirstName());
+//
+//		updateActor.setActorLastName(actorDetails.getActorLastName());
+//
+//
+//		final Actor updatedActor =  actorRepo.save(updateActor);
+//
+//		return ResponseEntity.ok(updatedActor);
+//	}
+//
+//	@PostMapping("/addActors")
+//	public Actor createEmployee (@Validated @RequestBody Actor actor) {
+//		return actorRepo.save(actor);
+//	}
 
 	@DeleteMapping("/deleteActors/{id}")
 	public Map<String, Boolean> deleteActor(@PathVariable(value = "id") int id)
